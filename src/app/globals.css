@@ -1,0 +1,110 @@
+* {
+  padding: 0rem;
+  margin: 0rem;
+  box-sizing: border-box;
+}
+:root {
+  --background1: rgba(183, 4, 133, 0.1);
+  --font-family: "Monda", sans-serif;
+  --font-fold: 21px;
+  --font-smalleys: 20px;
+  --font-folds: 23px;
+  --font-smallz: 9px;
+  --font-smalls: 11px;
+  --font-small: 18px;
+  --font-book: 13px;
+  --font-books: 12px;
+  --font-nav: 1rem;
+  --font-smallz: 13px;
+  --detailBg: #e5e5e5;
+  --font-logo: 15px;
+  --font-logos: 17px;
+  --font-header: 25px;
+  --font-headers: 30px;
+  --font-new: 40px;
+  --font-now: 35px;
+  --font-newss: 50px;
+  --font-news: 60px;
+  --color-border: rgb(207,203,201);
+  --color-nav: rgb(254,254,254);
+  --color-hero: rgb(245,245,245);
+  --color-borders: rgb(56, 57, 65);
+  --color-icos: rgb(15, 16, 30);
+  --color-ico: rgb(16, 18, 29);
+  --color-orange: rgb(255,172,28);
+  --color-orrr: rgb(247,234,211);
+  --color-form: rgb(239,240,243);
+  --color-bt: rgb(1, 3, 20);
+  --color-dot: rgb(88, 90, 97);
+  --color-dots: rgb(146, 147, 158);
+  --color-lpink: rgb(244,236,238);
+  --color-pink: rgb(223, 134, 170);
+  --color-pro: rgb(237,177,184);
+  --color-circle: rgb(29, 31, 46);
+  --color-bg: #0d0c22;
+  --color-cborders: rgb(32, 33, 46);
+  --color-btn: #2e54ad;
+  --color-blackie: black;
+  --color-forms: rgb(32, 33, 46);
+  --color-navs: #4b4c4c;
+  --color-sidebg: rgb(255,247,232);
+  --color-text: #6a6b6c;
+  --color-footer: rgb(10, 8, 64);
+  --color-blog: #0b0b0e;
+  --color-gradient: linear-gradient(
+    180deg,
+    rgb(17, 13, 79) 0%,
+    rgb(64, 47, 102) 50%,
+    rgb(133, 81, 125) 100%
+  );
+  --box-shadow:  0px 0px 30px 0px #00000014;
+  --color-white: #ffffff;
+}
+html {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+ul {
+  list-style: none;
+  padding: 0rem;
+  margin: 0rem;
+}
+body {
+  margin: 0rem;
+  padding: 0rem;
+  font-family: var(--font-family);
+  height: 100vh;
+  box-sizing: border-box;
+}
+.main {
+  color: var(--color-white);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0rem;
+  padding: 0rem;
+}
+input {
+  font-family: var(--font-family);
+}
+button {
+  font-family: var(--font-family);
+  cursor: pointer;
+}
+thead {
+  padding: 0rem;
+  margin: 0rem;
+  border-collapse: collapse;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}

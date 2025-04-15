@@ -1,0 +1,136 @@
+.section {
+  position: relative;
+  height: 100vh;
+    width: 100%;
+    background-image: url(/img/back.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.divs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 70%;
+  justify-content: center;
+  align-items: center;
+}
+.daily {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: red;
+  height: 100%;
+}
+.daily h1 {
+  font-size: var(--font-new);
+  color: var(--color-white);
+  text-align: center;
+  font-weight: 700;
+}
+.form {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-form);
+  padding: 4rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.forms {
+  margin: 1rem 0rem;
+}
+.icons {
+  font-size: var(--font-logo) !important;
+  color: var(--color-borders) !important;
+}
+.inputs {
+  margin: 1rem 0rem;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  border: 0.1rem solid var(--color-border);
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.3rem;
+}
+.inputs input {
+  display: flex;
+  align-items: center;
+  width: 100% !important;
+  background: transparent;
+  border: none;
+  outline:  none;
+  font-family: var(--font-family);
+}
+.inputs input::placeholder {
+   font-size: var(--font-logo);
+   color: var(--color-borders);
+}
+.check {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0rem;
+}
+.forget {
+  color: rgb(140,146,152);
+  font-weight: 600;
+  font-size: var(--font-logo);
+}
+.h1 {
+   font-size: var(--font-header);
+   text-align: center;
+   font-weight: 700;
+}
+.errors {
+  color: red;
+}
+.btn {
+  width: 100%;
+  margin: 0.3rem 0rem;
+  padding: 0.4rem 0rem;
+  outline: none;
+  border: none;
+  font-family: var(--font-family);
+  font-weight: 700;
+  border-radius: 0.4rem;
+  font-size: var(--font-small);
+  color: var(--color-white);
+  background-color: var(--color-orange);
+}
+.default {
+  font-size: var(--font-small);
+  color: var(--color-orange);
+  cursor: pointer;
+}
+@media (min-width: 280px) and (max-width: 767px) 
+{
+  .divs {
+    grid-template-columns: repeat(1, 1fr);
+    width: 90%;
+  }
+  .daily {
+    display: none;
+  }
+
+.form {
+  padding: 3rem 1rem;
+}
+.forms {
+  border-radius: 1.5rem !important;
+}
+}
+@media (min-width: 768px) and (max-width: 1024px) 
+{
+  .divs {
+    width: 80%;
+  }
+  .form {
+    padding: 3rem 1rem;
+  }
+  .daily {
+     padding: 0rem 2rem;
+  }
+    
+}
