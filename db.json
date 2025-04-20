@@ -5,62 +5,37 @@
       "name": "Dominos Pizza",
       "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Dominos_pizza_logo.svg/512px-Dominos_pizza_logo.svg.png?20111115123340",
       "food": "Pizza",
-      "foodImage": "https://source.unsplash.com/400x300/?burger"
+      "foodImage": "https://source.unsplash.com/400x300/?burger",
+      "delivery": "buy 2 get 1 free",
+      "distance": "2km"
     },
     {
-        "id": 2,
+      "id": 2,
       "name": "Burger king",
       "logo": "https://cdn.brandfetch.io/idic5-kTvm/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B",
       "food": "Burger",
-      "foodImage": "https://source.unsplash.com/400x300/?sushi"
+      "foodImage": "https://source.unsplash.com/400x300/?sushi",
+      "delivery": "free delivery",
+      "distance": "3.1km"
     },
     {
-        "id": 3,
-        "name": "Dominos Pizza",
-        "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Dominos_pizza_logo.svg/512px-Dominos_pizza_logo.svg.png?20111115123340",
-        "food": "Pizza",
-        "foodImage": "https://source.unsplash.com/400x300/?burger"
-      },
-      {
-          "id": 4,
-        "name": "Burger king",
-        "logo": "https://cdn.brandfetch.io/idic5-kTvm/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B",
-        "food": "Burger",
-        "foodImage": "https://source.unsplash.com/400x300/?sushi"
-      },
-    {
-        "id": 5,
-        "name": "Burger Palace",
-        "logo": "https://source.unsplash.com/100x100/?burger,logo",
-        "food": "Beef Burger",
-        "foodImage": "https://source.unsplash.com/400x300/?burger"
+      "id": 3,
+      "name": "Dominos Pizza",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Dominos_pizza_logo.svg/512px-Dominos_pizza_logo.svg.png?20111115123340",
+      "food": "Pizza",
+      "foodImage": "https://source.unsplash.com/400x300/?burger",
+      "delivery": "buy 2 get 1 free",
+      "distance": "2km"
     },
     {
-        "id": 6,
-        "name": "Burger Palace",
-        "logo": "https://source.unsplash.com/100x100/?burger,logo",
-        "food": "Beef Burger",
-        "foodImage": "https://source.unsplash.com/400x300/?burger"
-    },
-    {
-        "id": 7,
-        "name": "Burger Palace",
-        "logo": "https://source.unsplash.com/100x100/?burger,logo",
-        "food": "Beef Burger",
-        "foodImage": "https://source.unsplash.com/400x300/?burger"
-    },
-    {
-        "id": 8,
-        "name": "Burger Palace",
-        "logo": "https://source.unsplash.com/100x100/?burger,logo",
-        "food": "Beef Burger",
-        "foodImage": "https://source.unsplash.com/400x300/?burger"
-    },
-    {
-        "id": 9,
-        "name": "Sizzling Plate",
-        "logo": "https://via.placeholder.com/80x80.png?text=Sizzling+Plate",
-        "foods": ["Steak", "Mashed Potatoes", "Salad"]
-      }
+      "id": 4,
+      "name": "Burger king",
+      "logo": "https://cdn.brandfetch.io/idic5-kTvm/theme/dark/logo.svg?c=1dxbfHSJFAPEGdCLU4o5B",
+      "food": "Burger",
+      "foodImage": "https://source.unsplash.com/400x300/?sushi",
+      "delivery": "free delivery",
+      "distance": "1.1km"
+    }
+    
   ]
 }

@@ -26,7 +26,7 @@ const Aside = () => {
               </div>
               <span>Home</span>
             </Link>
-            <Link href="/" className={styles.link}>
+            <Link href="/Dashboard?initials=food" className={styles.link}>
               <div className={styles.img_logo}>
                 <FoodBankOutlinedIcon className={styles.side_icon}/>
               </div>

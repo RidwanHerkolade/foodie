@@ -1,0 +1,49 @@
+.img {
+    width: 8rem;
+    height: 8rem;
+    position: relative;
+}
+.logo_img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+.resD {
+    background: var(--color-white);
+    border-radius: 0.4rem;
+    box-shadow: var(--box-shadow);
+}
+.divs {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1.3rem 1rem;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 1rem 0rem;
+    gap: 1rem;
+}
+.name {
+    color: var(--color-black);
+    font-weight: 700;
+}
+.buy {
+    display: flex;
+}
+.buys {
+    color: var(--color-reds);
+    background: var(--color-red);
+    border-radius: 1.5rem;
+    display: flex;
+    justify-content: center;
+    font-size: var(--font-smallz);
+    margin: 0.5rem 0rem;
+    padding: 0.2rem 1rem;
+}
+.distance {
+    color: var(--color-black);
+    font-size: var(--font-smallz);
+    font-weight: 700;
+}

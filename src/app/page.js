@@ -102,7 +102,7 @@ const page = () => {
       <div className={styles.divs}>
         <div className={styles.daily}>
           <h1>
-            Hello,<br></br> Good evening
+            Hello,<br></br> Good Morning
           </h1>
         </div>
         <div className={styles.form}>

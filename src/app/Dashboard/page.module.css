@@ -1,11 +1,11 @@
-.dash {
+/* .dash {
     display: grid;
     grid-template-columns: 20% auto;
     width: 100%;
     height: 100%;
-}
+} */
 .aside {
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 .hero {
     background-color: var(--color-hero);
