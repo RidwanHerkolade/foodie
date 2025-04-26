@@ -13,12 +13,11 @@ import { auth, db } from "./firebase/config";
 import { setDoc, doc } from "firebase/firestore";
 import { useRouter } from "next/navigation";
 import { Toaster, toast } from "sonner";
-
-// import Link from "next/link";
 const page = () => {
   const [IsDefault, setIsDefault] = useState(true);
   const [isLoading, setIsLoading] = useState(false)
   const {setInitials} = useContext(AddContext);
+  
   // forms authentication using reach hook form
   const {
     register,
