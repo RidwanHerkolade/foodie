@@ -3,4 +3,10 @@
   publish = ".next"
 
 [[plugins]]
-  package = "@netlify/next"
+  package = "@netlify/next-runtime"
+
+# Optional: fallback for all unmatched routes (recommended)
+[[redirects]]
+  from = "/*"
+  to = "/404"
+  status = 404
