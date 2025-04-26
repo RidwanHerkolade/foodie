@@ -79,11 +79,10 @@ body {
   margin: 0rem;
   padding: 0rem;
   font-family: var(--font-family);
-  height: 100vh;
   box-sizing: border-box;
 }
 .main {
-  color: var(--color-white);
+  color: var(--color-blackie);
 }
 h1,
 h2,
@@ -112,6 +111,47 @@ a {
 }
 .aside {
   display: grid;
-  border: 1px solid red;
   grid-template-columns: 20% auto;
+  height: 100vh;
+  position: relative;
+}
+.asides{
+  margin: 1rem 0rem;
+  overflow-y: auto  !important;
+  height: calc(100vh - 6.5rem);
+  position: relative;
+  margin: 5.5rem 0rem;
+}
+.main {
+    background-color: var(--color-hero);
+    overflow-y: auto;
+    height: 100vh;  
+}
+@media (min-width: 280px) and (max-width: 500px) {
+  .aside{
+    grid-template-columns: 1fr !important;
+    position: relative !important;
+    height: 100%;
+  }
+  .asides-mobile {
+    position: fixed;
+    background-color: var(--color-white);
+    z-index: 100000;
+    height: 100%;
+    width: 65%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+  }
+  .asides {
+    display: none;
+  }
+  .main {
+    order: -1;
+  }
+}
+@media (min-width: 501px) and (max-width: 1024px) {
+  .aside{
+    grid-template-columns: 30% 70%;
+    height: 100%;
+  }
 }

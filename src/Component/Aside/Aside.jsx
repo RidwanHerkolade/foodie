@@ -1,149 +1,83 @@
-import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
-import FoodBankOutlinedIcon from '@mui/icons-material/FoodBankOutlined';
-import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import ReorderOutlinedIcon from '@mui/icons-material/ReorderOutlined';
-import ForumOutlinedIcon from '@mui/icons-material/ForumOutlined';
-import RestaurantMenuIcon from '@mui/icons-material/RestaurantMenu';
+"use client";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import FoodBankOutlinedIcon from "@mui/icons-material/FoodBankOutlined";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
+import ReorderOutlinedIcon from "@mui/icons-material/ReorderOutlined";
+import ForumOutlinedIcon from "@mui/icons-material/ForumOutlined";
+import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import Link from "next/link";
-import styles from './aside.module.css'
-
+import styles from "./aside.module.css";
+import { usePathname } from "next/navigation";
+const menuDatas = [
+  {
+    section: "Client App",
+    links: [
+      { id: 1, name: "Home", href: "/Dashboard", icon: <HomeOutlinedIcon /> },
+      { id: 2, name: "Foods", href: "/Food", icon: <FoodBankOutlinedIcon /> },
+      { id: 3, name: "Cart", href: "/", icon: <ShoppingCartOutlinedIcon /> },
+      { id: 4, name: "Order", href: "/", icon: <ReorderOutlinedIcon /> },
+      { id: 5, name: "Chat", href: "/", icon: <ForumOutlinedIcon /> },
+    ],
+  },
+  {
+    section: "Admin panel",
+    links: [
+      { id: 6, name: "Dashboard", href: "/", icon: <HomeOutlinedIcon /> },
+      { id: 7, name: "Orders", href: "/", icon: <FoodBankOutlinedIcon /> },
+      {
+        id: 8,
+        name: "Customer",
+        href: "/",
+        icon: <ShoppingCartOutlinedIcon />,
+      },
+      { id: 9, name: "Sellers", href: "/", icon: <ReorderOutlinedIcon /> },
+      { id: 10, name: "Restaurant", href: "/", icon: <ForumOutlinedIcon /> },
+      { id: 11, name: "Food", href: "/", icon: <ForumOutlinedIcon /> },
+      { id: 12, name: "Wallet", href: "/", icon: <ForumOutlinedIcon /> },
+      { id: 13, name: "Settings", href: "/", icon: <ForumOutlinedIcon /> },
+    ],
+  },
+  {
+    section: "Ui",
+    links: [
+      { id: 14, name: "Home", href: "/", icon: <HomeOutlinedIcon /> },
+      { id: 15, name: "Foods", href: "/", icon: <FoodBankOutlinedIcon /> },
+      { id: 16, name: "Cart", href: "/", icon: <ShoppingCartOutlinedIcon /> },
+      { id: 17, name: "Order", href: "/", icon: <ReorderOutlinedIcon /> },
+      { id: 18, name: "Chat", href: "/", icon: <ForumOutlinedIcon /> },
+    ],
+  },
+];
 const Aside = () => {
+  const pathname = usePathname();
   return (
     <aside>
-        <div className={styles.aside}>
-          {/* <div className={styles.logo}>
-            <div className={styles.img_logo}>
-                <RestaurantMenuIcon/>
-            </div>
-            <h2 className={styles.h2}>Foody</h2>
-          </div> */}
-          <div className={styles.links}>
-          <p className={styles.top}>Client App</p>
-          <div>
-            <Link href="/" className={styles.link} >
-              <div className={styles.img_logo}>
-                <HomeOutlinedIcon className={styles.side_icon}/>
+      <div className={styles.logo}>Foody</div>
+      <div className={styles.aside}>
+        <div className={styles.links}>
+          {menuDatas.map((data, index) => {
+            return (
+              <div key={index} className={styles.links}>
+                <p className={styles.top}>{data.section}</p>
+                <div>
+                  {data.links.map((link) => {
+                    return (
+                      <Link href={link.href} key={link.id} className={`${styles.link} ${pathname === link.href ? styles.active : ""} `}>
+                        <div className={styles.img_logo}>
+                          <div className={styles.side_icon}>{link.icon}</div>
+                        </div>
+                        <span>{link.name}</span>
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
-              <span>Home</span>
-            </Link>
-            <Link href="/Dashboard?initials=food" className={styles.link}>
-              <div className={styles.img_logo}>
-                <FoodBankOutlinedIcon className={styles.side_icon}/>
-              </div>
-              <span>Foods</span>
-            </Link>
-            <Link href="/" className={styles.link}>
-              <div className={styles.img_logo}>
-                <ShoppingCartOutlinedIcon className={styles.side_icon}/>
-              </div>
-              <span>Cart</span>
-            </Link>
-            <Link href="/" className={styles.link}>
-              <div className={styles.img_logo}>
-                <ReorderOutlinedIcon className={styles.side_icon}/>
-              </div>
-              <span>Order</span>
-            </Link>
-            <Link href="/" className={styles.link}>
-              <div className={styles.img_logo}>
-                <ForumOutlinedIcon className={styles.side_icon}/>
-              </div>
-              <span>Chat</span>
-            </Link>
-          </div>
-          </div>
-          <div className={styles.links}>
-          <p className={styles.top}>Admin panel</p>
-          <ul>
-            <Link href="/" className={styles.link} >
-              <div className={styles.img_logo}>
-                <HomeOutlinedIcon className={styles.side_icon}/>
-              </div>
-              <span>Dashboard</span>
-            </Link>
-            <Link href="/" className={styles.link}>
-              <div className={styles.img_logo}>
-                <FoodBankOutlinedIcon className={styles.side_icon}/>
-              </div>
-              <span>Orders</span>
-            </Link>
-            <Link href="/" className={styles.link}>
-              <div className={styles.img_logo}>
-                <ShoppingCartOutlinedIcon className={styles.side_icon}/>
-              </div>
-              <span>Customer</span>
-            </Link>
-            <Link href="/" className={styles.link}>
-              <div className={styles.img_logo}>
-                <ReorderOutlinedIcon className={styles.side_icon}/>
-              </div>
-              <span>Sellers</span>
-            </Link>
-            <Link href="/" className={styles.link}>
-              <div className={styles.img_logo}>
-                <ForumOutlinedIcon className={styles.side_icon}/>
-              </div>
-              <span>Restaurant</span>
-            </Link>
-            <Link href="/" className={styles.link}>
-              <div className={styles.img_logo}>
-                <ForumOutlinedIcon className={styles.side_icon}/>
-              </div>
-              <span>Food</span>
-            </Link>
-            <Link href="/" className={styles.link}>
-              <div className={styles.img_logo}>
-                <ForumOutlinedIcon className={styles.side_icon}/>
-              </div>
-              <span>Wallet</span>
-            </Link>
-            <Link href="/" className={styles.link}>
-              <div className={styles.img_logo}>
-                <ForumOutlinedIcon className={styles.side_icon}/>
-              </div>
-              <span>Settings</span>
-            </Link>
-          </ul>
-          </div>
-          <div className={styles.links}>
-          <p className={styles.top}>Ui</p>
-          <ul>
-            <Link href="/" className={styles.link} >
-              <div className={styles.img_logo}>
-                <HomeOutlinedIcon className={styles.side_icon}/>
-              </div>
-              <span>Home</span>
-            </Link>
-            <Link href="/" className={styles.link}>
-              <div className={styles.img_logo}>
-                <FoodBankOutlinedIcon className={styles.side_icon}/>
-              </div>
-              <span>Foods</span>
-            </Link>
-            <Link href="/" className={styles.link}>
-              <div className={styles.img_logo}>
-                <ShoppingCartOutlinedIcon className={styles.side_icon}/>
-              </div>
-              <span>Cart</span>
-            </Link>
-            <Link href="/" className={styles.link}>
-              <div className={styles.img_logo}>
-                <ReorderOutlinedIcon className={styles.side_icon}/>
-              </div>
-              <span>Order</span>
-            </Link>
-            <Link href="/" className={styles.link}>
-              <div className={styles.img_logo}>
-                <ForumOutlinedIcon className={styles.side_icon}/>
-              </div>
-              <span>Chat</span>
-            </Link>
-          </ul>
-          </div>
-         
+            );
+          })}
         </div>
-      </aside>
-  )
-}
+      </div>
+    </aside>
+  );
+};
 
-export default Aside
+export default Aside;

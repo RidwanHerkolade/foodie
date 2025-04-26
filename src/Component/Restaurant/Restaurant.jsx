@@ -7,7 +7,7 @@ const Restaurant = () => {
 const {fetchUsers, restaurantDatas, setRestaurantDatas} = useContext(AddContext)
   return (
     <div className={styles.div}>
-        <p className={styles.name}>Restaurant Nearby</p>
+        <p className={styles.names}>Restaurant Nearby</p>
         <div className={styles.grid}>
         {restaurantDatas.map((data) => {
           return[
@@ -17,7 +17,7 @@ const {fetchUsers, restaurantDatas, setRestaurantDatas} = useContext(AddContext)
                 <Image fill src={data.logo} alt="logo img" className="logo_img"/>
                 </div>
                 <div className={styles.content}>
-                    <p className={styles.name}>{data.name}</p>
+                    <p className={styles.nameee}>{data.name}</p>
                     <div className={styles.rating}>
                          <div className={styles.buy}>
                              <div className={styles.buys}>{data.delivery}</div>
@@ -25,7 +25,6 @@ const {fetchUsers, restaurantDatas, setRestaurantDatas} = useContext(AddContext)
                     </div>
                   <div className={styles.distance}>{data.distance}</div>
                 </div>
-                
                </div>
             </div>
           ]

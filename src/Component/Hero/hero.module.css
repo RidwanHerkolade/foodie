@@ -1,8 +1,5 @@
-/* .hero {
-    border: 1px solid red;
-} */
 .hero_divs {
-    margin: 1rem;
+    margin: 6rem 1rem;
 }
 .hero_div {
     display: flex;
@@ -50,8 +47,9 @@
 }
 .ride h3 {
     font-size: var(--font-header);
+    color: var(--color-blackie) !important;
     text-transform: capitalize;
-    font-weight: 700;
+    font-weight: 600;
 }
 .order {
     margin-top: 2rem;
@@ -79,6 +77,8 @@
 }
 .sub {
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     background-color: var(--color-lpink);
     position: relative;
@@ -95,15 +95,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    bottom: 1.2rem;
     width: 100%;
 
 }
 .go_btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     background-color: var(--color-pro);
      padding: 0.3rem 0.5rem;
      outline: none;
@@ -114,8 +109,96 @@
      font-size: var(--font-logos);
      font-weight: 500;
 }
-/* .menu {
-    position: relative;
-    overflow: hidden;
+@media (min-width: 280px) and (max-width: 500px) {
+    .grids {
+        grid-template-columns: 1fr;
+        gap: 1.3rem;
+        margin: 1.5rem 0rem;
+    }
+    .sub {
+        display: flex;
+        padding: 1.5rem 0rem;
+    }
+    .sub h4 {
+        color: var(--color-borders);
+        font-size: var(--font-logo);
+    }
+    .ride h3 {
+        font-size: var(--font-fold);
+        color: var(--color-blackie) !important;
+    }
+    .order {
+        width: 100%;
+    }
+    .img {
+        width: 100%;
+        height: 15rem !important;
+        position: relative;
+    }
+    .foody_com {
+        align-items: center;
+        padding: 1rem 1rem;
+        
+   }
+   .hero_divs {
+    margin: 4rem 1rem;
+}
+.go_btn {
+     font-size: var(--font-fold);
+     font-weight: 500;
+}
 
-} */
+}
+
+@media (min-width: 501px) and (max-width: 767px) {
+    .grids {
+        grid-template-columns: 1fr;
+        gap: 1.3rem;
+        margin: 1.5rem 0rem;
+    }
+    .sub h4 {
+        font-size: var(--font-header);
+        width: 70%;
+    }
+    .ride h3 {
+        color: var(--color-blackie) !important;
+        width: 100%;
+    }
+    .order {
+        width: 100%;
+        font-size: var(--font-logos);
+    }
+    .img {
+        width: 30rem;
+        height: 15rem !important;
+        position: relative;
+    }
+    .foody_com {
+        background-color: var(--color-sidebg);
+        align-items: center;
+   }
+   .hero_divs {
+    margin: 6rem 1rem;
+}
+.go_btn {
+    font-size: var(--font-fold);
+    font-weight: 500;
+}
+.name {
+    font-size: var(--font-logos);
+
+}
+.foody_link {
+    font-size: var(--font-logos);
+}
+.namee {
+    font-size: var(--font-logos)
+}
+}
+@media (min-width: 501px) and (max-width: 1024px) {
+    .grids {
+        grid-template-columns: 1fr;
+        gap: 1.3rem;
+        margin: 1.5rem 0rem;
+    }
+  }

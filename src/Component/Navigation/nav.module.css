@@ -1,17 +1,17 @@
 .navs {
   display: flex;
   width: 100%;
-  position: relative;
-  z-index: 1000;
-  top: 0rem;
-  position: sticky;
-  
+  position: relative !important;
 }
 .nav {
   display: grid;
   grid-template-columns: 20% auto;
   background-color: var(--color-nav) !important;
-  width: 100%;
+  position: fixed;
+  right: 0rem;
+  z-index: 1000;
+  left: 0rem;
+  top: 0rem;
 }
 .logo {
   display: flex;
@@ -68,13 +68,6 @@
   /* gap: 0.5rem; */
   align-items: center;
 }
-/* .ini {
-  border: 1px solid red;
-  padding: 1rem;
-  height: 1rem;
-  border-radius: 1rem;
-
-} */
 .modes {
   display: flex;
   gap: 1rem;
@@ -87,6 +80,7 @@
   font-size: var(--font-folds) !important;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 .not {
   color: var(--color-borders) !important;
@@ -94,4 +88,41 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+}
+.nav_menu {
+  display: none;
+}
+.menu_icon {
+  display: flex;
+  
+}
+.li {
+  display: flex;
+
+}
+.icon {
+  display: flex;
+}
+@media (min-width: 280px) and (max-width: 480px) {
+  .nav {
+    display: none !important;
+  }
+  .nav_menu {
+  display: flex;
+  position: fixed;
+  align-items: center !important;
+  padding: 0.8rem;
+  justify-content: space-between;
+  background: var(--color-white);
+  z-index: 10000;
+  width: 100%;
+  top: 0rem;
+  left: 0rem;
+  right: 0rem;
+  }
+}
+@media (min-width: 501px) and (max-width: 1024px) {
+  .nav {
+    grid-template-columns: 30% auto !important;
+  }
 }

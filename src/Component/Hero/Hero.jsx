@@ -10,9 +10,9 @@ const Hero = () => {
     <div className={styles.hero}>
       <div className={styles.hero_divs}>
       <div className={styles.hero_div}>
-        <Link href="/" className={styles.name}>Home</Link>
+        <div className={styles.name}>Home</div>
         <div className={styles.foody}>
-          <Link href="/" className={styles.foody_link}>Foody</Link>
+          <Link href="/Dashboard" className={styles.foody_link}>Foody</Link>
           <div className={styles.arrow}>
             {" "}
             <ArrowForwardIosIcon className={styles.arrow}/>{" "}

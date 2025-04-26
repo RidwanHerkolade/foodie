@@ -4,35 +4,40 @@ import { Mondas } from "./utils/font";
 import Nav from "@/Component/Navigation/Nav";
 import Aside from "@/Component/Aside/Aside";
 import { usePathname } from "next/navigation";
-import AddContextProvider from "@/context/AddContextProvider";
+import AddContextProvider, { AddContext } from "@/context/AddContextProvider";
+import { useContext } from "react";
+
 export default function RootLayout({ children }) {
   const pathname = usePathname();
   const isLoginPage = pathname === "/";
-  // const isDashboard = pathname.startsWith("/Dashboard")
   return (
     <html lang="en">
       <body className={`${Mondas.variable}`}>
         <AddContextProvider>
-          {isLoginPage ? (
-            <div className="body_img">{children}</div>
-          ) : (
-            <div className="flex h-screen">
-              <div className="flex flex-col flex-1">
-                <Nav />
-                {/* <main className="p-4 body_img">{children}</main> */}
-              </div>
-              <div className="aside">
-                 <Aside />
-                <main className="p-4 body_img">{children}</main>
-              </div>
-               
-            </div>
-          )}
-          
-          {/* <div className="body_img">{children}</div> */}
-          {/* <Toaster/> */}
+          <InnerLayout isLoginPage={isLoginPage}>
+            {children}
+          </InnerLayout>
         </AddContextProvider>
       </body>
     </html>
+  );
+}
+function InnerLayout({ isLoginPage, children }) {
+  const { isMobile, asideRef } = useContext(AddContext); 
+  if (isLoginPage) {
+    return <div className="body_img">{children}</div>;
+  }
+  return (
+    <div className="screen">
+      <div className="flex-1">
+        <Nav />
+      </div>
+      <div className="aside">
+        <div className={`${isMobile ? "asides-mobile" : "asides"}`} ref={asideRef}>
+          <Aside />
+        </div>
+        <main className="main">{children}</main>
+      </div>
+    </div>
   );
 }

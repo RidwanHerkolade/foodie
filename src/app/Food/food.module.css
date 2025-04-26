@@ -1,0 +1,37 @@
+.food_divs {
+    /* border: 1px solid red; */
+}
+.food_div {
+    margin: 1rem;
+}
+.hero_div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.name {
+    font-size: var(--font-logo);
+    font-weight: 600;
+    color: var(--color-borders);
+
+}
+.foody_link {
+    color: var(--color-pink);
+    font-size: var(--font-logo);
+}
+.foody {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+.arrow {
+    display: flex;
+    align-items: center;
+    font-size: 1rem !important;
+    color: var(--color-border);
+}
+.homee {
+    font-size: var(--font-logo);
+    font-weight: 500;
+    color: var(--color-borders);
+}

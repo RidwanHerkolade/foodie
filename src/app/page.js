@@ -18,7 +18,7 @@ import { Toaster, toast } from "sonner";
 const page = () => {
   const [IsDefault, setIsDefault] = useState(true);
   const [isLoading, setIsLoading] = useState(false)
-  const {setInitials} = useContext(AddContext)
+  const {setInitials} = useContext(AddContext);
   // forms authentication using reach hook form
   const {
     register,
@@ -57,7 +57,7 @@ const page = () => {
         toast.success('success', {
           richColors: true
         })
-        router.push(`/Dashboard?initials=${email.slice(0, 3)}`);
+        router.push('/Dashboard');
         setIsLoading(false)
       }, 5000)
      
@@ -75,7 +75,8 @@ const page = () => {
   const handleLogin = async (data) => {
     setIsLoading(true);
     const { email, password } = data;
-    setInitials(email.slice(0, 3));
+    // setInitials(email.slice(0, 3));
+    
     try {
       await signInWithEmailAndPassword(auth, email, password);
       console.log("success");
@@ -83,7 +84,9 @@ const page = () => {
         toast.success('success', {
           richColors: true
         })
-        router.push(`/Dashboard?initials=${email.slice(0, 3)}`);
+        const userInitials = email.slice(0, 3);
+         setInitials(userInitials);
+        router.push('/Dashboard');
         setIsLoading(false)
       }, 3000)
     } catch (error) {

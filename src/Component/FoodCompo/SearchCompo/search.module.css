@@ -1,0 +1,26 @@
+.input {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    margin: 1rem 0rem;
+    width: 100%;
+    border: 0.5px solid var(--color-blackie);
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+}
+.input input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+}
+input::placeholder {
+    font-size: var(--font-smallz);
+    text-transform: capitalize;
+}
+.search {
+    color: var(--color-border);
+    font-size: var(--font-small) !important;
+    display: flex;
+    align-items: center;
+}
