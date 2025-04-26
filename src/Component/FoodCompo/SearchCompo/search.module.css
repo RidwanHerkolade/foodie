@@ -8,13 +8,13 @@
     padding: 0.5rem 1rem;
     border-radius: 0.4rem;
 }
-.input input {
+.input .input {
     border: none;
     outline: none;
     background: transparent;
     width: 100%;
 }
-input::placeholder {
+.input::placeholder {
     font-size: var(--font-smallz);
     text-transform: capitalize;
 }

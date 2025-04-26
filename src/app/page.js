@@ -121,6 +121,7 @@ const page = () => {
                     type="text"
                     placeholder="email"
                     name="email"
+                    className={styles.inp}
                     // required
                     {...register("email", {
                       required: "input your email",
@@ -144,6 +145,7 @@ const page = () => {
                   <input
                     type="password"
                     placeholder="password"
+                    className={styles.inp}
                     name="password"
                     // required
                     {...register("password", {
@@ -158,6 +160,7 @@ const page = () => {
               <div className={styles.check}>
                 <input
                   type="checkbox"
+                  className={styles.inp}
                   // required
                   {...register("terms", {
                     required: "You must accept the terms",
@@ -180,6 +183,7 @@ const page = () => {
                     type="text"
                     placeholder="email"
                     name="email"
+                    className={styles.inp}
                     // required
                     {...register("email", {
                       required: "input your email",
@@ -203,6 +207,7 @@ const page = () => {
                   <input
                     type="password"
                     placeholder="password"
+                    className={styles.inp}
                     name="password"
                     // required
                     {...register("password", {
@@ -217,6 +222,7 @@ const page = () => {
               <div className={styles.check}>
                 <input
                   type="checkbox"
+                  className={styles.inp}
                   // required
                   {...register("terms", {
                     required: "You must accept the terms",

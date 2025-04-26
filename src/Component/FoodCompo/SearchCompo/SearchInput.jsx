@@ -4,7 +4,7 @@ const SearchInput = () => {
   return (
     <div className={styles.input}>
         <SearchIcon className={styles.search}/>
-        <input placeholder="search product name" type="text" />
+        <input placeholder="search product name" type="text" className={styles.inp}/>
     </div>
   )
 }
