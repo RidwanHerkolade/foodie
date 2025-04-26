@@ -1,12 +1,7 @@
 [build]
   command = "npm run build"
   publish = ".next"
+  environment = { NEXT_PRIVATE_TARGET = "server" }
 
 [[plugins]]
   package = "@netlify/next-runtime"
-
-# Optional: fallback for all unmatched routes (recommended)
-[[redirects]]
-  from = "/*"
-  to = "/404"
-  status = 404
