@@ -2,6 +2,7 @@
 const nextConfig = {
   output: "export", // <-- ADD this line
   images: {
+    unoptimized: true,
     remotePatterns: [
       { protocol: 'https', hostname: 'cdn.brandfetch.io' },
       { protocol: 'https', hostname: 'source.unsplash.com' },

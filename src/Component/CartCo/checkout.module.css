@@ -1,0 +1,49 @@
+.divs {
+    padding: 0.5rem;
+    border: 1px solid red;
+    margin: 1rem 0rem;
+}
+.subtotal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0.5rem 0rem;
+
+}
+.check {
+    border-bottom: 1px solid var(--color-border);
+}
+.check h1 {
+    font-size: var(--font-logos);
+    font-weight: 600;
+}
+.subtotal p {
+    font-size: var(--font-logo);
+    text-transform: capitalize;
+    color: var(--color-dot);
+}
+.total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 1rem 0rem;
+}
+.total p {
+    font-size: var(--font-logos);
+    text-transform: capitalize;
+    font-weight: 700;
+    color: var(--color-dot);
+}
+.proceed {
+    color: var(--color-white);
+    background-color: var(--color-orange);
+    font-size: var(--font-small);
+    font-weight: 600;
+    display: flex;
+    border-radius: 1.3rem;
+    cursor: pointer;
+    justify-content: center;
+    margin: 0.4rem 0rem;
+    align-items: center;
+    padding: 0.4rem 0rem;
+}

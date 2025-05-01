@@ -8,7 +8,7 @@ import { AddContext } from "@/context/AddContextProvider";
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
 
 const Nav = () => {
-  const { initials, handleMobile } = useContext(AddContext);
+  const { initials, handleMobile, handleIsTab } = useContext(AddContext);
   return (
     <nav className={styles.navs}>
         <div className={styles.nav_menu}>
@@ -30,7 +30,7 @@ const Nav = () => {
           <div className={styles.navgrid}>
             <div className={styles.grid}>
               <div className={styles.modes}>
-                <MenuIcon className={styles.menu} />
+                <MenuIcon className={styles.menu} onClick={handleIsTab}/>
               </div>
               <div className={styles.searchInput}>
                 <SearchIcon className={styles.s_icon} />

@@ -4,17 +4,19 @@ import FoodBankOutlinedIcon from "@mui/icons-material/FoodBankOutlined";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import ReorderOutlinedIcon from "@mui/icons-material/ReorderOutlined";
 import ForumOutlinedIcon from "@mui/icons-material/ForumOutlined";
-import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import Link from "next/link";
 import styles from "./aside.module.css";
 import { usePathname } from "next/navigation";
+// import { useContext } from "react";
+// import { AddContext } from "@/context/AddContextProvider";
+
 const menuDatas = [
   {
     section: "Client App",
     links: [
       { id: 1, name: "Home", href: "/Dashboard", icon: <HomeOutlinedIcon /> },
       { id: 2, name: "Foods", href: "/Food", icon: <FoodBankOutlinedIcon /> },
-      { id: 3, name: "Cart", href: "/", icon: <ShoppingCartOutlinedIcon /> },
+      { id: 3, name: "Cart", href: "/Cart", icon: <ShoppingCartOutlinedIcon /> },
       { id: 4, name: "Order", href: "/", icon: <ReorderOutlinedIcon /> },
       { id: 5, name: "Chat", href: "/", icon: <ForumOutlinedIcon /> },
     ],
@@ -48,6 +50,7 @@ const menuDatas = [
     ],
   },
 ];
+// const {isTab} = useContext(AddContext);
 const Aside = () => {
   const pathname = usePathname();
   return (

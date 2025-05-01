@@ -3,7 +3,8 @@ export const AddContext = createContext(null);
 const AddContextProvider = (props) => {
   const [initials, setInitials] = useState('')
   const [restaurantDatas, setRestaurantDatas] = useState([])
-  const [isMobile, setIsMobile] = useState(false)
+  const [isMobile, setIsMobile] = useState(false);
+  const [isTab, setIsTab] = useState(false)
   const asideRef = useRef(null);
   const fetchUsers = async () => {
      try {
@@ -23,7 +24,10 @@ const AddContextProvider = (props) => {
   // media responsive drop down menu
   const handleMobile = () => {
      setIsMobile(!isMobile);
-
+  }
+  // tablet sidebar nav
+  const handleTabNav = () => {
+       setIsTab(!isTab)
   }
 
  useEffect(() => {
@@ -45,7 +49,6 @@ const AddContextProvider = (props) => {
  },[[isMobile]]);
 
  
-
   const contextValue = {
     initials,
     isMobile,
@@ -55,7 +58,10 @@ const AddContextProvider = (props) => {
     fetchUsers,
     restaurantDatas,
     setRestaurantDatas,
-    asideRef
+    asideRef,
+    isTab,
+    setIsTab,
+    handleTabNav
   }
   return (
       <AddContext.Provider value={contextValue}>
