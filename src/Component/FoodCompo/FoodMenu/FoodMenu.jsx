@@ -4,6 +4,8 @@ import styles from "./foodmenu.module.css";
 import { menuDatas } from "@/Component/Menu/MenuData";
 import CustomMarks from "./Slider";
 import SearchInput from "../SearchCompo/SearchInput";
+import { useContext } from "react";
+import { AddContext } from "@/context/AddContextProvider";
 const foodMenus = [
   { id: 1, name: "rice and pluses" },
   { id: 2, name: "Beverages" },
@@ -14,6 +16,12 @@ const foodMenus = [
   { id: 7, name: "fruits" },
 ];
 const FoodMenu = () => {
+  const {isSearch,  handleChange, addToCart, redirectToCheckOut, addFoodToCart, setAddToCart} = useContext(AddContext)
+
+  const handleAddToCart = (item) => {
+    addToCart(item);
+    redirectToCheckOut(); // Redirect to checkout after adding to cart
+  };
   return (
     <div className={styles.menu}>
       <div className={styles.range}>
@@ -38,7 +46,12 @@ const FoodMenu = () => {
       <div className={styles.contents}>
         <SearchInput/>
       <div className={styles.content}>
-        {menuDatas.map((data) => {
+        {menuDatas.filter((item) => {
+          return(
+             item.name.toLowerCase().includes(isSearch)
+          )
+        })
+        .map((data) => {
           return (
             <div className={styles.foodie} key={data.id}>
               <div className={styles.imgs}>
@@ -52,7 +65,7 @@ const FoodMenu = () => {
               <div className={styles.name}>
                 <p>{data.name}</p>
                 <p>{data.price}</p>
-                <div className={styles.btn}>Add to cart</div>
+                <div className={styles.btn} onClick={() => handleAddToCart(data)} >Add to cart</div>
               </div>
             </div>
           );

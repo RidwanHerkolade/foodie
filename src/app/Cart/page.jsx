@@ -1,8 +1,7 @@
-import React from 'react'
 import styles from "./cart.module.css"
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import Link from 'next/link';
-import Checkout from '@/Component/CartCo/Checkout';
+import Cartco from '@/Component/CartCo/Cartco';
 const page = () => {
   return (
     <div className=''>
@@ -20,7 +19,7 @@ const page = () => {
           <div className={styles.homee}>Cart</div>
         </div>
       </div>
-      <Checkout/>
+      <Cartco/>
     </div>
     </div>
   )

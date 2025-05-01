@@ -1,11 +1,16 @@
-import { createContext, useEffect, useState, useRef } from "react"
+"use client"
+import { useRouter } from "next/router";
+import { createContext, useEffect, useState, useRef, use } from "react"
 export const AddContext = createContext(null);
 const AddContextProvider = (props) => {
   const [initials, setInitials] = useState('')
   const [restaurantDatas, setRestaurantDatas] = useState([])
   const [isMobile, setIsMobile] = useState(false);
   const [isTab, setIsTab] = useState(false)
+  const [isSearch, setIsSearch] = useState("");
+  const [addToCart, setAddToCart] = useState([])
   const asideRef = useRef(null);
+
   const fetchUsers = async () => {
      try {
       const response = await fetch('http://localhost:4000/restaurants');
@@ -47,8 +52,18 @@ const AddContextProvider = (props) => {
   document.body.style.overflow = "auto";
 };
  },[[isMobile]]);
+const handleChange = (e) => {
+  setIsSearch(e.target.value)
+}
 
- 
+const addFoodToCart = (item) => {
+    setAddToCart((prevCart) => [...prevCart, item])
+}
+const router = useRouter();
+const redirectToCheckOut = () => {
+     router.push('/checkout');
+}
+
   const contextValue = {
     initials,
     isMobile,
@@ -58,10 +73,17 @@ const AddContextProvider = (props) => {
     fetchUsers,
     restaurantDatas,
     setRestaurantDatas,
+    addToCart,
+    setAddToCart,
+    addFoodToCart,
+    redirectToCheckOut,
     asideRef,
     isTab,
     setIsTab,
-    handleTabNav
+    handleTabNav,
+    handleChange,
+    isSearch,
+    setIsSearch
   }
   return (
       <AddContext.Provider value={contextValue}>

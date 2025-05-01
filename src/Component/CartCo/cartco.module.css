@@ -1,0 +1,75 @@
+.divs {
+    margin: 0.5rem 0rem;
+}
+.div {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+}
+.checkout {
+      background: var(--color-white);
+    
+}
+.border {
+    background: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 1rem;
+}
+.borderImg {
+    position: relative;
+    width: 12rem;
+    height: 12rem;
+}
+.borderImgs {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.birder_div {
+    display: flex;
+    align-items: center;
+}
+.border_content p{
+    font-weight: 500;
+    font-size: var(--font-small);
+}
+.add {
+    display: flex;
+    align-items: center;
+    font-size: var(--font-small);
+    gap: 1rem;
+}
+.addIcon {
+    font-size: var(--font-small);
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    padding: 0.3rem;
+    border-radius: 1.2rem;
+    cursor: pointer;
+}
+.del {
+    display: flex;
+    align-items: center;
+    font-size: var(--font-small) !important;
+    color: var(--color-reds);
+    cursor: pointer;
+}
+.re {
+    display: flex;
+    align-items: center;
+    font-size: var(--font-small) !important;
+    color: var(--color-black);
+}
+.dels {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.number {
+    display: flex;
+    gap: 0.6rem;
+    align-items: center !important;
+}
