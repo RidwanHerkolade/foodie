@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./checkout.module.css";
-const Checkout = () => {
+const Checkout = () => {  
   return (
     <div className={styles.divs}>
       <div className={styles.checkout}>
@@ -8,20 +8,20 @@ const Checkout = () => {
           <h1>Cart total</h1>
           <div className={styles.subtotal}>
             <p>sub-total</p>
-            <p>$100</p>
+            <p></p>
           </div>
           <div className={styles.subtotal}>
             <p>delivery</p>
-            <p>$20</p>
+            <p></p>
           </div>
           <div className={styles.subtotal}>
             <p>tax</p>
-            <p>$10</p>
+            <p></p>
           </div>
         </div>
         <div className={styles.total}>
           <p>Total</p>
-          <p>$2000</p>
+          <p></p>
         </div>
         <div className={styles.proceed}>Proceed to Checkout</div>
       </div>

@@ -1,69 +1,61 @@
-"use client"
-import { useRouter } from "next/router";
-import { createContext, useEffect, useState, useRef, use } from "react"
+"use client";
+import { createContext, useEffect, useState, useRef, use } from "react";
 export const AddContext = createContext(null);
 const AddContextProvider = (props) => {
-  const [initials, setInitials] = useState('')
-  const [restaurantDatas, setRestaurantDatas] = useState([])
+  const [initials, setInitials] = useState("");
+  const [restaurantDatas, setRestaurantDatas] = useState([]);
   const [isMobile, setIsMobile] = useState(false);
-  const [isTab, setIsTab] = useState(false)
+  const [isTab, setIsTab] = useState(false);
   const [isSearch, setIsSearch] = useState("");
-  const [addToCart, setAddToCart] = useState([])
+  const [isCart, setIsCart] = useState([]);
   const asideRef = useRef(null);
 
   const fetchUsers = async () => {
-     try {
-      const response = await fetch('http://localhost:4000/restaurants');
-      if(!response.ok) throw new Error("failed to fetch restaurant")
-      const data = await response.json()
-      setRestaurantDatas(data)
-     }
-     catch(error) {
-      console.error("error fetching restaurant data")
-     }
-  }
+    try {
+      const response = await fetch("http://localhost:4000/restaurants");
+      if (!response.ok) throw new Error("failed to fetch restaurant");
+      const data = await response.json();
+      setRestaurantDatas(data);
+    } catch (error) {
+      console.error("error fetching restaurant data");
+    }
+  };
   useEffect(() => {
-        fetchUsers()
-  },[])
-
+    fetchUsers();
+  }, []);
   // media responsive drop down menu
   const handleMobile = () => {
-     setIsMobile(!isMobile);
-  }
+    setIsMobile(!isMobile);
+  };
   // tablet sidebar nav
   const handleTabNav = () => {
-       setIsTab(!isTab)
-  }
-
- useEffect(() => {
-  const handleClickOut = (event) => {
-    if(asideRef.current && !asideRef.current.contains(event.target)) {
-      setIsMobile(false)
+    setIsTab(!isTab);
+  };
+  useEffect(() => {
+    const handleClickOut = (event) => {
+      if (asideRef.current && !asideRef.current.contains(event.target)) {
+        setIsMobile(false);
+      }
+    };
+    if (isMobile) {
+      document.addEventListener("mousedown", handleClickOut);
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
     }
- }
- if(isMobile) {
-  document.addEventListener("mousedown", handleClickOut);
-  document.body.style.overflow = "hidden";
- } else {
-  document.body.style.overflow = "auto";
- }
- return () => {
-  document.removeEventListener("mousedown", handleClickOut);
-  document.body.style.overflow = "auto";
-};
- },[[isMobile]]);
-const handleChange = (e) => {
-  setIsSearch(e.target.value)
-}
+    return () => {
+      document.removeEventListener("mousedown", handleClickOut);
+      document.body.style.overflow = "auto";
+    };
+  }, [[isMobile]]);
 
-const addFoodToCart = (item) => {
-    setAddToCart((prevCart) => [...prevCart, item])
-}
-const router = useRouter();
-const redirectToCheckOut = () => {
-     router.push('/checkout');
-}
-
+  const handleChange = (e) => {
+    setIsSearch(e.target.value);
+  };
+  const handleCart = (item) => {
+    setIsCart((prevCart) => [...prevCart, item]);
+  };
+  const total = isCart.reduce((sum, item) => sum + item.price, 0);
   const contextValue = {
     initials,
     isMobile,
@@ -71,25 +63,25 @@ const redirectToCheckOut = () => {
     handleMobile,
     setInitials,
     fetchUsers,
+    total,
     restaurantDatas,
     setRestaurantDatas,
-    addToCart,
-    setAddToCart,
-    addFoodToCart,
-    redirectToCheckOut,
+    isCart,
+    setIsCart,
+    handleCart,
     asideRef,
     isTab,
     setIsTab,
     handleTabNav,
     handleChange,
     isSearch,
-    setIsSearch
-  }
+    setIsSearch,
+  };
   return (
-      <AddContext.Provider value={contextValue}>
-          {props.children}
-      </AddContext.Provider>
-  )
-}
+    <AddContext.Provider value={contextValue}>
+      {props.children}
+    </AddContext.Provider>
+  );
+};
 
-export default AddContextProvider
+export default AddContextProvider;

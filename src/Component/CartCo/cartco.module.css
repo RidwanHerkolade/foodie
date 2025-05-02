@@ -10,6 +10,21 @@
       background: var(--color-white);
     
 }
+.divs_fit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.explore {
+    padding: 0.3rem 1rem;
+    font-size: var(--font-small);
+    color: var(--color-white);
+    font-weight: 500;
+    background: var(--color-orange);
+    margin: 0.3rem;
+    border-radius: 0.3rem;
+}
 .border {
     background: var(--color-white);
     display: flex;
@@ -19,8 +34,8 @@
 }
 .borderImg {
     position: relative;
-    width: 12rem;
-    height: 12rem;
+    width: 10rem;
+    height: 10rem;
 }
 .borderImgs {
     width: 100%;

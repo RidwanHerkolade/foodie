@@ -15,13 +15,9 @@ const foodMenus = [
   { id: 6, name: "vegetables" },
   { id: 7, name: "fruits" },
 ];
-const FoodMenu = () => {
-  const {isSearch,  handleChange, addToCart, redirectToCheckOut, addFoodToCart, setAddToCart} = useContext(AddContext)
 
-  const handleAddToCart = (item) => {
-    addToCart(item);
-    redirectToCheckOut(); // Redirect to checkout after adding to cart
-  };
+const FoodMenu = ({item}) => {
+  const {isSearch,  handleCart} = useContext(AddContext); 
   return (
     <div className={styles.menu}>
       <div className={styles.range}>
@@ -51,21 +47,21 @@ const FoodMenu = () => {
              item.name.toLowerCase().includes(isSearch)
           )
         })
-        .map((data) => {
+        .map((item) => {
           return (
-            <div className={styles.foodie} key={data.id}>
+            <div className={styles.foodie} key={item.id}>
               <div className={styles.imgs}>
                 <Image
-                  src={data.img}
+                  src={item.img}
                   fill
                   alt="food_display"
                   className={styles.img}
                 />
               </div>
               <div className={styles.name}>
-                <p>{data.name}</p>
-                <p>{data.price}</p>
-                <div className={styles.btn} onClick={() => handleAddToCart(data)} >Add to cart</div>
+                <p>{item.name}</p>
+                <p>{item.price}</p>
+                <div className={styles.btn} onClick={() => handleCart(item)}>Add to cart</div>
               </div>
             </div>
           );
