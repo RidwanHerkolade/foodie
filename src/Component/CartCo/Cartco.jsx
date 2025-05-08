@@ -6,6 +6,7 @@ import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import Image from "next/image";
 import { useContext, useMemo} from "react";
+import Link from "next/link";
 import { AddContext } from "@/context/AddContextProvider";
 
 const Cartco = () => { 
