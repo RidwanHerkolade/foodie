@@ -43,6 +43,8 @@
   margin: 1rem 0rem;
 }
 .icons {
+  display: flex;
+  align-items: center;
   font-size: var(--font-logo) !important;
   color: var(--color-borders) !important;
 }
