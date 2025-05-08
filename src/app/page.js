@@ -39,7 +39,6 @@ const page = () => {
   const handleSignUp = async (data) => {
     setIsLoading(true);
     const { email, password } = data;
-
     try {
       const userCredential = await createUserWithEmailAndPassword(
         auth,
@@ -88,7 +87,7 @@ const page = () => {
         setInitials(userInitials);
         router.push("/Dashboard");
         setIsLoading(false);
-      }, 3000);
+      }, 1000);
     } catch (error) {
       console.error(error.message);
       toast.error("Invalid email or password", {
