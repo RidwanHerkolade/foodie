@@ -236,7 +236,6 @@ const page = () => {
                 <input
                   type="checkbox"
                   className={styles.inp}
-                  // required
                   {...register("terms", {
                     required: "You must accept the terms",
                   })}
