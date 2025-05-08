@@ -1,5 +1,7 @@
 .divs {
-    padding: 0.8rem;
+    padding: 0rem 1rem;
+    padding-bottom: 1rem;
+    margin: 0rem 0rem;
 }
 .subtotal {
     display: flex;

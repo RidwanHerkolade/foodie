@@ -109,7 +109,7 @@
      font-size: var(--font-logos);
      font-weight: 500;
 }
-@media (min-width: 280px) and (max-width: 500px) {
+@media (min-width: 280px) and (max-width: 600px) {
     .grids {
         grid-template-columns: 1fr;
         gap: 1.3rem;
@@ -141,16 +141,14 @@
         
    }
    .hero_divs {
-    margin: 4rem 1rem;
+    margin: 5rem 1rem;
 }
 .go_btn {
      font-size: var(--font-fold);
      font-weight: 500;
 }
-
 }
-
-@media (min-width: 501px) and (max-width: 767px) {
+@media (min-width: 601px) and (max-width: 767px) {
     .grids {
         grid-template-columns: 1fr;
         gap: 1.3rem;
@@ -195,7 +193,7 @@
     font-size: var(--font-logos)
 }
 }
-@media (min-width: 501px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1024px) {
     .grids {
         grid-template-columns: 1fr;
         gap: 1.3rem;

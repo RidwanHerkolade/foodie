@@ -6,9 +6,22 @@ import SearchIcon from "@mui/icons-material/Search";
 import { useContext} from "react";
 import { AddContext } from "@/context/AddContextProvider";
 import PersonOutlinedIcon from '@mui/icons-material/PersonOutlined';
+import LogoutIcon from '@mui/icons-material/Logout';
+import { signOut } from "firebase/auth";
+import { auth } from "@/app/firebase/config";
+import { useRouter } from "next/navigation";
 
 const Nav = () => {
   const { initials, handleMobile, handleIsTab } = useContext(AddContext);
+  const router = useRouter()
+  const handleSignOut = async () => {
+    try{
+      await signOut(auth);
+       router.push("/")
+    } catch(error) {
+      console.error("error why signing out")
+    }
+  }
   return (
     <nav className={styles.navs}>
         <div className={styles.nav_menu}>
@@ -44,9 +57,13 @@ const Nav = () => {
               <div className={styles.modes}>
                 <NotificationsNoneOutlinedIcon className={styles.not} />
               </div>
+              <div className={styles.log}>
+                  <LogoutIcon className={styles.not} onClick={handleSignOut}/>
+              </div>
               <div className={styles.user}>
                 <div className={styles.name}>{initials}</div>
               </div>
+             
             </div>
           </div>
         </div>

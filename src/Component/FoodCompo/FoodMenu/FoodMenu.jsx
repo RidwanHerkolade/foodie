@@ -15,7 +15,6 @@ const foodMenus = [
   { id: 6, name: "vegetables" },
   { id: 7, name: "fruits" },
 ];
-
 const FoodMenu = ({item}) => {
   const {isSearch,  handleCart} = useContext(AddContext); 
   return (

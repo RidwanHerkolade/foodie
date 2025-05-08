@@ -16,11 +16,13 @@
     "@netlify/next": "^1.4.9",
     "@netlify/next-runtime": "^5.0.0-alpha.25",
     "firebase": "^11.6.0",
+    "loading-spinner": "^1.2.1",
     "next": "15.1.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-firebase-hooks": "^5.1.1",
     "react-hook-form": "^7.54.2",
+    "react-loader-spinner": "^6.1.6",
     "sonner": "^2.0.3",
     "toastify-js": "^1.12.0"
   },

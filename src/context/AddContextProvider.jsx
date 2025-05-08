@@ -11,6 +11,7 @@ const AddContextProvider = (props) => {
   const asideRef = useRef(null);
 
   const fetchUsers = async () => {
+
     try {
       const response = await fetch("http://localhost:4000/restaurants");
       if (!response.ok) throw new Error("failed to fetch restaurant");
@@ -52,18 +53,52 @@ const AddContextProvider = (props) => {
   const handleChange = (e) => {
     setIsSearch(e.target.value);
   };
+
+  // cart handler
   const handleCart = (item) => {
-    setIsCart((prevCart) => [...prevCart, item]);
+    const numericPrice = parseFloat(item.price?.toString().replace(/[^0-9.]/g, "")) || 0;
+    const cartItem = {
+      ...item,
+      price: numericPrice,
+      quantity: 1,
+    };
+    setIsCart((prevCart) => [...prevCart, cartItem]);
   };
-  const total = isCart.reduce((sum, item) => sum + item.price, 0);
+
+  // increase item
+  const increaseItem = (index) => {
+    setIsCart((prevCart) => {
+      const newCart = [...prevCart];
+      newCart[index].quantity += 1;
+      return newCart;
+    })
+  }
+ 
+  // decrease item
+  const decreaseItem = (index) => {
+    setIsCart((prevCart) => {
+      const newCart = [...prevCart];
+      if (newCart[index].quantity > 1) {
+        newCart[index].quantity -= 1;
+      }
+      return newCart;
+    })
+  }
+  // delete items
+  const deleteItem = (index) => {
+     setIsCart((prevCart) => prevCart.filter((_, i) => i !== index))
+  }
+  
   const contextValue = {
     initials,
     isMobile,
     setIsMobile,
     handleMobile,
+    deleteItem,
+    decreaseItem,
+    increaseItem,
     setInitials,
     fetchUsers,
-    total,
     restaurantDatas,
     setRestaurantDatas,
     isCart,

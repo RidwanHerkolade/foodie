@@ -127,7 +127,7 @@ a {
     overflow-y: auto;
     height: 100vh;  
 }
-@media (min-width: 280px) and (max-width: 500px) {
+@media (min-width: 280px) and (max-width: 600px) {
   .aside{
     grid-template-columns: 1fr !important;
     position: relative !important;
@@ -149,7 +149,7 @@ a {
     order: -1;
   }
 }
-@media (min-width: 501px) and (max-width: 1024px) {
+@media (min-width: 601px) and (max-width: 1024px) {
   .aside{
     grid-template-columns: 30% 70%;
     height: 100%;

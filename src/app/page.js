@@ -5,6 +5,7 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import { useForm } from "react-hook-form";
 import { useContext, useState } from "react";
 import { AddContext } from "@/context/AddContextProvider";
+import { ThreeDots } from "react-loader-spinner";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
@@ -15,9 +16,9 @@ import { useRouter } from "next/navigation";
 import { Toaster, toast } from "sonner";
 const page = () => {
   const [IsDefault, setIsDefault] = useState(true);
-  const [isLoading, setIsLoading] = useState(false)
-  const {setInitials} = useContext(AddContext);
-  
+  const [isLoading, setIsLoading] = useState(false);
+  const { setInitials } = useContext(AddContext);
+
   // forms authentication using reach hook form
   const {
     register,
@@ -32,70 +33,69 @@ const page = () => {
     }
     console.log(data);
   };
+
   // handling the sign up auth app
   const router = useRouter();
   const handleSignUp = async (data) => {
     setIsLoading(true);
     const { email, password } = data;
+
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      const user = auth.currentUser;
+      const userCredential = await createUserWithEmailAndPassword(
+        auth,
+        email,
+        password
+      );
+      const user = userCredential.user;
       const userInitials = email.slice(0, 3);
       setInitials(userInitials);
-      // setInitials(email.slice(0, 3));
-      console.log(user);
-      if (user) {
-        setDoc(doc(db, "User", user.uid), {
-          email: user.email,
-          password: user.password,
-          initials: userInitials,
-        });
-      }
-      console.log("success");
-      setTimeout(() => {
-        toast.success('success', {
-          richColors: true
-        })
-        router.push('/Dashboard');
-        setIsLoading(false)
-      }, 5000)
-     
-    } catch (error) {
-      console.log(error.message);
-      toast.error(error.message || "Signup failed!", {
-        richColors: true
+      await setDoc(doc(db, "User", user.uid), {
+        email: user.email,
+        initials: userInitials,
       });
-    }
-    finally{
-      setIsLoading(false)
+
+      toast.success("User successfully!", { richColors: true });
+      const confirm = window.confirm(
+        "Registration successful. Go to dashboard?"
+      );
+      if (confirm) {
+        router.push("/Dashboard");
+      }
+    } catch (error) {
+      if (error.code === "auth/email-already-in-use") {
+        toast.error("User already exists", { richColors: true });
+      } else {
+        toast.error(error.message || "Signup failed", { richColors: true });
+      }
+    } finally {
+      setIsLoading(false);
     }
   };
+
   // handling sign in page
   const handleLogin = async (data) => {
     setIsLoading(true);
     const { email, password } = data;
     // setInitials(email.slice(0, 3));
-    
     try {
       await signInWithEmailAndPassword(auth, email, password);
       console.log("success");
       setTimeout(() => {
-        toast.success('success', {
-          richColors: true
-        })
+        toast.success("success", {
+          richColors: true,
+        });
         const userInitials = email.slice(0, 3);
-         setInitials(userInitials);
-        router.push('/Dashboard');
-        setIsLoading(false)
-      }, 3000)
+        setInitials(userInitials);
+        router.push("/Dashboard");
+        setIsLoading(false);
+      }, 3000);
     } catch (error) {
       console.error(error.message);
-      toast.error("Invalid email or password",{
-        richColors: true
-      } )
-    }
-    finally{
-      setIsLoading(false)
+      toast.error("Invalid email or password", {
+        richColors: true,
+      });
+    } finally {
+      setIsLoading(false);
     }
   };
   return (
@@ -168,7 +168,21 @@ const page = () => {
                 <p className={styles.forget}>forget password</p>
               </div>
               <button className={styles.btn} type="submit" disabled={isLoading}>
-                {isLoading ? "loading..." : "Login"}
+                {isLoading ? (
+                  <ThreeDots
+                    visible={true}
+                    height="30"
+                    width="100%"
+                    color="#fff"
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItem: "center",
+                    }}
+                  />
+                ) : (
+                  "Login"
+                )}
               </button>
             </form>
           ) : (
@@ -230,7 +244,21 @@ const page = () => {
                 <p className={styles.forget}>forget password</p>
               </div>
               <button className={styles.btn} type="submit">
-              {isLoading ? "loading..." : "Sign up"}
+                {isLoading ? (
+                  <ThreeDots
+                    visible={true}
+                    height="30"
+                    width="100%"
+                    color="#fff"
+                    style={{
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItem: "center",
+                    }}
+                  />
+                ) : (
+                  "Sign up"
+                )}
               </button>
             </form>
           )}

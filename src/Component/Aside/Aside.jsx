@@ -39,16 +39,16 @@ const menuDatas = [
       { id: 13, name: "Settings", href: "/", icon: <ForumOutlinedIcon /> },
     ],
   },
-  {
-    section: "Ui",
-    links: [
-      { id: 14, name: "Home", href: "/", icon: <HomeOutlinedIcon /> },
-      { id: 15, name: "Foods", href: "/", icon: <FoodBankOutlinedIcon /> },
-      { id: 16, name: "Cart", href: "/", icon: <ShoppingCartOutlinedIcon /> },
-      { id: 17, name: "Order", href: "/", icon: <ReorderOutlinedIcon /> },
-      { id: 18, name: "Chat", href: "/", icon: <ForumOutlinedIcon /> },
-    ],
-  },
+  // {
+  //   section: "Ui",
+  //   links: [
+  //     { id: 14, name: "Home", href: "/", icon: <HomeOutlinedIcon /> },
+  //     { id: 15, name: "Foods", href: "/", icon: <FoodBankOutlinedIcon /> },
+  //     { id: 16, name: "Cart", href: "/", icon: <ShoppingCartOutlinedIcon /> },
+  //     { id: 17, name: "Order", href: "/", icon: <ReorderOutlinedIcon /> },
+  //     { id: 18, name: "Chat", href: "/", icon: <ForumOutlinedIcon /> },
+  //   ],
+  // },
 ];
 // const {isTab} = useContext(AddContext);
 const Aside = () => {

@@ -103,7 +103,11 @@
 .icon {
   display: flex;
 }
-@media (min-width: 280px) and (max-width: 480px) {
+.log {
+  display: flex;
+  align-items: center;
+}
+@media (min-width: 280px) and (max-width: 600px) {
   .nav {
     display: none !important;
   }
@@ -121,7 +125,7 @@
   right: 0rem;
   }
 }
-@media (min-width: 501px) and (max-width: 1024px) {
+@media (min-width: 601px) and (max-width: 1024px) {
   .nav {
     grid-template-columns: 30% auto !important;
   }
